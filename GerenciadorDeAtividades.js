@@ -10,8 +10,7 @@ class GerenciadorDeAtividades {
     listarAtividades() {
         return this.atividades;
     }
-
-    // Outros métodos para filtrar, atualizar, excluir atividades, etc.
+    
 }
 
 module.exports = GerenciadorDeAtividades;

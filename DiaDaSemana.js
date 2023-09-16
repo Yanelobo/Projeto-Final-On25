@@ -11,7 +11,6 @@ class DiaDaSemana {
         };
     }
 
-    // Define um dia como "livre"
     definirDiaLivre(dia) {
         if (this.status[dia]) {
             this.status[dia] = "livre";
@@ -20,7 +19,6 @@ class DiaDaSemana {
         }
     }
 
-    // Define um dia como "ocupado"
     definirDiaOcupado(dia) {
         if (this.status[dia]) {
             this.status[dia] = "ocupado";
@@ -29,20 +27,26 @@ class DiaDaSemana {
         }
     }
 
-    // Obtém o status de um dia específico
+    definirDiasOcupados(dias) {
+        dias.forEach((dia) => {
+            if (this.status[dia]) {
+                this.status[dia] = "ocupado";
+            } else {
+                console.log(`Dia '${dia}' inválido!`);
+            }
+        });
+    }
+
     getStatusDoDia(dia) {
         return this.status[dia] || "Dia inválido";
     }
-
-    // Obtém todos os dias com o status "livre"
     getDiasLivres() {
         return Object.keys(this.status).filter((dia) => this.status[dia] === "livre");
     }
 
-    // Obtém todos os dias com o status "ocupado"
     getDiasOcupados() {
         return Object.keys(this.status).filter((dia) => this.status[dia] === "ocupado");
     }
 }
 
-module.exports = GerenciadorDeAtividades;
+module.exports = DiaDaSemana;
